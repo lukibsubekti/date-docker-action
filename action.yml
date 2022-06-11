@@ -1,0 +1,16 @@
+name: 'Show Date'
+description: 'Show UTC date in specific format'
+inputs:
+  format:
+    description: 'Format of result'
+    required: true
+    default: '%x%X'
+outputs:
+  time:
+    description: 'The time you call'
+
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{inputs.format}}
